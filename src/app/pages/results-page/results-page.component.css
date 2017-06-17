@@ -1,0 +1,26 @@
+.rules.sub-heading {
+    background-color: #034c75;
+    padding: 4px;
+    margin: 10px 0px;
+}
+
+.category {
+    background-color: #036a75;
+    padding: 4px;
+}
+
+.rule-set-container {
+    display: inline-flex;
+    margin: auto;
+    width: 100%;
+}
+
+.rule-set {
+    display: block;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 48%;
+    margin-top: 0px;
+}

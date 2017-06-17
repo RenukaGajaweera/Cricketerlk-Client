@@ -1,0 +1,316 @@
+.dashboard {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    box-shadow: 3px 4px 6px 0px #131313;
+    /* border: 1px solid #0597da; */
+    padding: 12px;
+    border-radius: 6px;
+    /* box-shadow: 0px 0px 4px 0px #b0dcf3; */
+    /* background-color: #015d88; */
+    background-color: #046b9a;
+    /* background-image: url(http://localhost:9090/CDN/images/assets/dashboard-back.jpg); */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat !important; */
+    /* background-position-y: 50%; */
+    width: 100%;
+}
+
+.back-button {
+    position: absolute;
+    top: -12px;
+    cursor: pointer;
+    font-weight: 600;
+    border: 2px solid #de2b2b;
+    font-size: 13px;
+    border-radius: 12px;
+    /* padding: 5px 5px; */
+    color: #de2b2b;
+    left: 96%;
+    white-space: nowrap;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+}
+
+.back-button:hover {
+    color: #ab2020;
+    border: 2px solid #ab2020;
+}
+
+
+.team-image {
+    width: 100px;
+    margin: 5px 10px;
+}
+
+.team-info-container {
+    background-color: white;
+    /* border-top-left-radius: 6px; */
+    /* border-top-right-radius: 6px; */
+    padding-bottom: 10px;
+    color: black;
+    /* box-shadow: 0px 4px 6px 0px #131313; */
+    box-shadow: 3px 4px 6px 0px #131313;
+    border-radius: 6px;
+    min-height: 104px;
+}
+
+.team-info {
+    border-left: 1px solid;
+    border-right: 1px solid;
+    min-width: 300px;
+    margin: 5px 15px;
+    padding: 0px 10px;
+    /*width: 33%;*/
+}
+
+.team-name {
+    display: block;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: #058ac7;
+    border-bottom: 1px solid rgba(70, 70, 70, 0.64);
+    min-height: 41px;
+}
+
+.team-moto {
+    display: block;
+    padding-left: 10px;
+}
+
+.supporting-country {
+    display: block;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.big-number-container {
+    display: block;
+    border-top: 15px solid #d13b3b;
+    /* width: 100px; */
+    /* height: 100px; */
+    content: '';
+    /* border: 2px solid; */
+    /* border-radius: 50px; */
+    /*margin: 0px 5% 0px 5%;*/
+    background-color: white;
+    color: rgba(0, 0, 0, 0.48);
+    text-shadow: 0px 0px 2px #383838;
+    padding: 0px 5px 0px 5px;
+	float: left;
+    box-shadow: 3px 4px 6px 0px #131313;
+    border-radius: 4px;
+    margin: 5px 30px;
+    text-align: center;
+    min-width: 100px;
+}
+
+.big-number-label {
+    display: block;
+    border-top: 1px solid black;
+    font-size: 13px;
+    text-shadow: none;
+    font-weight: 900;
+    color: black;
+}
+
+.big-number-container.position {
+    /* border-color: #ff1f1f; */
+    /*box-shadow: 0px 3px 3px 1px rgba(66, 66, 66, 0.75);*/
+}
+
+.big-number-container.score {
+    /* border-color: #ff1f1f; */
+    /*box-shadow: 0px 3px 3px 1px rgba(66, 66, 66, 0.75);*/
+}
+
+.big-number {
+    font-size: 41px;
+    margin: 0px;
+}
+
+
+.coming-soon {
+    display: block;
+    width: 100%;
+    position: relative;
+    background-size: contain;
+    margin-top: 7px;
+    margin-top: 50px;
+}
+
+.game-card {
+    padding: 5px;
+    width: 100%;
+    background-color: #058ac7;
+    text-shadow: 1px 1px 1px black;
+    box-shadow: 3px 4px 6px 0px #131313;
+    cursor: pointer;
+    margin-bottom: 30px;
+    border-radius: 6px
+}
+
+.game-card:hover {
+    background-color: #046b9a;
+    box-shadow: none;
+}
+
+.game-card.disabled {
+    background-color: #707070;
+    cursor: default;
+}
+
+.game-card.disabled:hover {
+    background-color: #707070;
+    box-shadow: 3px 4px 6px 0px #131313;
+}
+
+.game-card.play {
+    background-color: #d13b3b;
+}
+
+.game-card.play:hover {
+    background-color: #993131;
+}
+
+.game {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    border-right: 1px solid #616161;
+}
+
+.game.data, .game.details {
+    width: 15%;
+}
+
+.game.details{
+    line-height: 36px;
+}
+
+.game.teams,.game.button {
+    width: 35%;
+    min-height: 77px;
+    line-height: 77px;
+}
+
+.game.button {
+    border-right: none;
+}
+
+.data {
+    width: 100%;
+    margin: auto;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.data.big-text {
+    font-size: 24px;
+}
+
+.data.big-text.team {
+    width: 20%;
+    margin: 0px 12px;
+    font-size: 33px;
+}
+
+.results-button-container {
+    margin: 5px 10px;
+    min-width: 155px;
+    padding: 0px 10px;
+    margin: auto;
+    /* width: 15%; */
+}
+
+.leaderboard-btn {
+    border-radius: 6px;
+    text-align: center;
+    margin: 10px 0px;
+    background-color: #5ec790;
+    box-shadow: 3px 4px 6px 0px #131313;
+    padding: 2px 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    /*min-width: 170px;*/
+
+}
+
+.leaderboard-btn:hover {
+    background-color: #458462;
+    box-shadow: none;
+}
+
+.leaderboard-btn.disabled {
+    background-color: lightgrey;
+    cursor: default;
+}
+
+.leaderboard-btn.disabled:hover {
+    background-color: lightgrey;
+    box-shadow: 3px 4px 6px 0px #131313;
+}
+
+.dark-background {
+    background-color: rgba(88, 88, 88, 0.95);
+    padding: 15px 10px 15px 10px;
+}
+
+.result-item {
+    background-color: #0f83b7;
+    margin: 5px 0px;
+    padding: 5px;
+    border-radius: 6px;
+    display: inline-block;
+    width: 100%;
+    box-shadow: 3px 4px 6px 0px #131313;
+}
+
+.result-item.gold {
+    background-color: #e2b310;
+}
+
+.index {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #14a5e6;
+    text-align: center;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.index.gold {
+    background-color: #ffd02c;
+}
+
+.use-name {
+    display: inline-block;
+    min-width: 100px;
+    margin: 0px 15px;
+}
+
+.user-score {
+    display: inline-block;
+    min-width: 50px;
+    float: right;
+    text-align: right;
+    margin: 5px 10px;
+}
+
+.modal-title {
+    background-color: #036a75;
+    padding: 0px 5px 5px 5px;
+    margin-bottom: 10px;
+    box-shadow: 3px 4px 6px 0px #131313;
+}
+
+.leaderboard {
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 650px;
+}

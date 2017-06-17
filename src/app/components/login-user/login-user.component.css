@@ -1,0 +1,214 @@
+.dark-background {
+    /*background-color: rgba(24, 65, 101, 0.95);*/
+    background-color: #9e9e9e;
+    padding: 15px 30px 25px 30px;
+    opacity: 0.95;
+    box-shadow: 0px 3px 10px 2px rgba(0, 0, 0, 0.75);
+    width: 80%;
+    margin: auto;
+}
+
+.input-icon {
+    background-color: white
+}
+
+input.form-control:focus {
+    border-color: rgb(132, 186, 232) !important
+}
+
+.login-container {
+    text-align: end;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.login {
+    cursor: pointer;
+}
+
+.logout {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.input-group{
+    margin-bottom: 5px;
+    margin-top: 5px
+}
+
+.loading-modal{
+    margin: auto;
+    display: block;
+    width: 20%;
+}
+
+.login-input-icon-button {
+    border: 1px solid rgb(132, 186, 232);
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    margin-left: -1px;
+}
+
+.login-input {
+    background-color: transparent !important;
+    color: white;
+    border: 1px solid #2e6596;
+    box-shadow: 0px 0px 3px 0px #2e6596;
+    border-radius: 13px;
+    margin: 1% 0% 0.25% 0%;
+    padding-left: 40px;
+}
+
+.input-group.key::before, .input-group.mail::before {   
+    /*display: block;
+    display: inline-block;*/
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    margin: auto;
+    position: relative;
+    left: 20px;
+    position: absolute;
+    left: 16px;
+    z-index: 10;
+    top: 30%;
+}
+
+.input-group.key::before {
+     content: '\f084';
+}
+
+.input-group.mail::before {
+     content: '\f0e0';
+}
+
+login-input::-webkit-input-placeholder {
+    color:    white;
+}
+.login-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+}
+.login-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    white;
+}
+.login-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    white;
+}
+.login-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    white;
+}
+.login-input::-ms-input-placeholder { /* Microsoft Edge */
+   color:    white;
+}
+
+.btn.btn-primary {
+    width: 100%;
+    margin-top: 5%;
+    border-radius: 10px;
+}
+.btn.btn-primary.back {
+    width: inherit;
+    margin-top: 5%;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.modal-title {
+    margin-bottom: 4%;
+    text-align: center;
+}
+
+.modal-title::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    margin: auto;
+    margin-top: 3px;
+}
+
+.alert-text {
+    color: #e61d1d;
+}
+
+.user-details {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.user-name {
+    border-right: 1px solid #dbe0e3;
+    padding-right: 5px;
+}
+
+.more-sign-up-options {
+    margin: auto;
+    text-align: center;
+}
+
+.more-sign-up-options::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    top: 13px;
+    left: 50px;
+}
+
+.sign-up-buttons {
+    margin: auto;
+    text-align: center;
+}
+
+.signup-label {
+    font-size: 12px;
+    padding: 0px 9px;
+}
+
+.button-item {
+    margin: 10px 10px 10px 10px;
+    padding: 5px 10px;
+    display: -webkit-inline-box;
+    /*width: 35px;*/
+    height: 35px;
+    text-align: -webkit-center;
+    border-radius: 8px;
+    background-color: #0370cf;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.button-item:hover {
+    background-color: #025aa5;
+    box-shadow: none;
+}
+
+.more-sign-up-options::before {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    top: 13px;
+    left: -50px;
+}
+
+.login:hover, .logout:hover {
+    color: #b0b0b0;
+    border-bottom: 1px solid #b0b0b0;
+}
+
+.sign-up-logo {
+    margin: auto;
+    font-size: 32px;
+    text-align: center;
+    /* display: block; */
+    border: 2px solid white;
+    border-radius: 30px;
+    height: 60px;
+    width: 60px;
+}

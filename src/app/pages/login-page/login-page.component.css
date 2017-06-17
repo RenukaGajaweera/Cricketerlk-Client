@@ -1,0 +1,354 @@
+.dark-background {
+    /*background-color: rgba(24, 65, 101, 0.95);*/
+    background-color: #9e9e9e;
+    padding: 15px 30px 25px 30px;
+}
+
+.sign-up.container {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #9e9e9e;
+    opacity: 0.95;
+    box-shadow: 0px 3px 10px 2px rgba(0, 0, 0, 0.75);
+    max-height: 470px;
+}
+
+.sign-up-logo {
+    margin: auto;
+    font-size: 32px;
+    text-align: center;
+    /* display: block; */
+    border: 2px solid white;
+    border-radius: 30px;
+    height: 60px;
+    width: 60px;
+}
+
+.more-sign-up-options {
+    margin: auto;
+    text-align: center;
+}
+
+/*.more-sign-up-options::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    top: 13px;
+    left: 50px;
+}*/
+
+.sign-up-buttons {
+    margin: auto;
+    text-align: center;
+}
+
+.signup-label {
+    font-size: 12px;
+    padding: 0px 9px;
+}
+
+.button-item {
+    margin: 10px 10px 10px 10px;
+    padding: 5px 10px;
+    display: -webkit-inline-box;
+    /*width: 35px;*/
+    height: 35px;
+    text-align: -webkit-center;
+    border-radius: 8px;
+    background-color: #0370cf;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.button-item:hover {
+    background-color: #025aa5;
+    box-shadow: none;
+}
+
+/*.more-sign-up-options::before {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    top: 13px;
+    left: -50px;
+}*/
+
+
+
+
+.modal-title {
+    margin-bottom: 4%;
+    text-align: center;
+}
+
+.modal-title::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    margin: auto;
+    margin-top: 3px;
+}
+
+.input-icon {
+    background-color: white
+}
+
+input.form-control:focus {
+    border-color: rgb(132, 186, 232) !important
+}
+
+.input-group{
+    margin-bottom: 5px;
+    margin-top: 5px
+}
+
+.login-input-icon-button {
+    border: 1px solid rgb(132, 186, 232);
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    margin-left: -1px;
+}
+
+.login-input {
+    background-color: transparent !important;
+    color: white;
+    border: 1px solid #2e6596;
+    box-shadow: 0px 0px 3px 0px #2e6596;
+    border-radius: 13px;
+    margin: 1% 0% 0.25% 0%;
+    padding-left: 40px;
+}
+
+.input-group.key::before, .input-group.mail::before, .input-group.user::before, .input-group.trophy::before, .input-group.motto::before, .input-group.flag::before {   
+    /*display: block;
+    display: inline-block;*/
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    margin: auto;
+    position: relative;
+    left: 20px;
+    position: absolute;
+    left: 16px;
+    z-index: 10;
+    top: 30%;
+}
+
+.date {
+    margin: 10px 0px 10px 0px;
+    display: block;
+}
+
+.input-group.key::before {
+     content: '\f084';
+}
+
+.input-group.mail::before {
+     content: '\f0e0';
+}
+
+.input-group.user::before {
+     content: '\f007';
+}
+
+.input-group.trophy::before {
+     content: '\f091 ';
+}
+
+.input-group.motto::before {
+     content: '\f004  ';
+}
+
+.input-group.flag::before {
+     content: '\f024';
+}
+
+.date::before {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    /* text-rendering: auto; */
+    /* -webkit-font-smoothing: antialiased; */
+    /* margin: auto; */
+    /* position: relative; */
+    /* left: 20px; */
+    position: absolute;
+    left: 30px;
+    z-index: 10;
+    bottom: 32%;
+    content: '\F073';
+}
+
+login-input::-webkit-input-placeholder {
+    color:    white;
+}
+.login-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+}
+.login-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    white;
+}
+.login-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    white;
+}
+.login-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    white;
+}
+.login-input::-ms-input-placeholder { /* Microsoft Edge */
+   color:    white;
+}
+
+.btn.btn-primary {
+    width: 100%;
+    margin-top: 5%;
+    border-radius: 10px;
+}
+.btn.btn-primary.back {
+    width: inherit;
+    margin-top: 5%;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.upload-image-button {
+    display: block;
+    text-align: center;
+    padding: 4px;
+    border-radius: 15px;
+    background-color: #5099d7;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    opacity: 0.85;
+    box-shadow: 1px 1px 1px 1px rgb(62, 62, 62);
+    z-index: 10;
+    bottom: 17%;
+    left: 2%;
+}
+
+.upload-image-button:hover {
+    background-color: #2280d0;
+    box-shadow: none;
+}
+
+.profile-image {
+    border: 1px solid #5391c5;
+    border-radius: 5px;
+    padding: 10px;
+    margin: auto;
+    display: block;
+}
+
+.btn.btn-primary.modal-navigation {
+    width: inherit;
+    margin-left: auto; 
+}
+
+.image-text {
+    display: block;
+    text-align: center;
+}
+
+.btn.btn-primary {
+    width: 100%;
+    margin-top: 5%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 0px #3d3b3b;
+}
+
+.btn.btn-primary:hover {
+    box-shadow: none;
+}
+
+.alert-text {
+    color: #e61d1d;
+    font-weight: 600;
+}
+
+.game-title {
+    width: 100%;
+    display: block;
+    /*margin-top: 100px;*/
+    /*position: fixed;*/
+    top: 47%;
+    right: -30px;
+    text-align: right;
+}
+
+.title-brand {
+    width: 100%;
+    display: block;
+    font-size: 50px;
+    font-weight: 600;
+    text-shadow: 1px 2px 4px #6a7c90;
+}
+
+.title-game {
+    width: 100%;
+    display: block;
+    font-size: 70px;
+    font-weight: 600;
+    text-shadow: 1px 2px 4px #6a7c90;
+}
+
+.title-event {
+    width: 100%;
+    display: block;
+    font-size: 40px;
+    font-weight: 600;
+    text-shadow: 1px 2px 4px #6a7c90;
+}
+
+span.login-input.dropdown {
+    height: 92%;
+    font-size: 12px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+span.login-input.dropdown::after {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    margin: auto;
+    position: relative;
+    left: 20px;
+    position: absolute;
+    left: 16px;
+    z-index: 10;
+    top: 30%;
+    content: '\f0d7';
+}
+
+span.login-input.dropdown:hover {
+    color: grey;
+}
+
+.show>.dropdown-menu {
+    display: block;
+    background-color: #9e9e9e;
+    border-color: #2e6596;
+    color: white;
+    padding: 5px 5px;
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.85);
+}
+
+.country-select-list:hover {
+      background-color: #5099d7;
+}
+
+.signup-close {
+    cursor: pointer;
+}
+
+.signup-close:hover {
+    color: grey;
+}

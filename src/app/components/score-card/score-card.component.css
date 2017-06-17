@@ -1,0 +1,94 @@
+.rule-set {
+    display: block;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 40%;
+    margin: auto;
+    width: 95%;
+    max-height: 650px;
+    overflow: auto;
+}
+
+.mini-card {
+    width: 100%;
+    background-color: #058ac7;
+    margin: 10px 2px;
+    padding: 10px;
+    min-height: 30px;
+    border-radius: 6px;
+    box-shadow: 3px 4px 6px 0px #131313;
+}
+
+.score-input-group {
+    display: inline-flex;
+    margin-top: 6px;
+}
+
+.team-container {
+    display: inline-block;
+    margin-right: 10px;
+    min-width: 90px;
+}
+
+.number {
+    background-color: #00afff;
+    border-radius: 20px;
+    width: 25px;
+    display: inline-block;
+    height: 25px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.admin-btn {
+    display: inline-block;
+    margin: 0px 5px;
+    padding: 4px;
+    border-radius: 6px;
+    background-color: #058ac7;
+    cursor: pointer;
+}
+
+.acton-container {
+    position: relative;
+    text-align: right;
+    top: -25px;
+    padding: 0px 10px;
+    margin-top: 23px;
+    height: 0px;
+}
+
+.mom {
+    margin: auto;
+    font-size: 13px;
+    text-align: left;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.score-input-group.title-container {
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    /* margin: 0px 10px; */
+    padding: 2px 10px;
+    position: sticky;
+    top: 0px;
+    background-color: #0599a9;
+}
+
+.title {
+    /* display: -webkit-inline-box; */
+    /*display: -ms-inline-flexbox;*/
+    /* display: inline-flex; */
+    /* margin: auto; */
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    border-bottom: 1px solid white;
+}

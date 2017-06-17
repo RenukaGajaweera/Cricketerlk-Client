@@ -1,0 +1,60 @@
+<div class="rule-set">
+    <ul style="padding-left: 0px" *ngIf="!summaryView">
+        <div *ngIf="(matchId !== undefined) && (matchId !== null)" class="score-input-group title-container">
+            <span class="title">Batting Score</span>
+            <span class="title">Bowling Score</span>
+            <span class="title">Fielding Score</span>
+            <span class="title">Extras</span>
+        </div>
+        <ng-template ngFor let-scoreCard [ngForOf]="scoreCardDetils" let-i="index">
+            <div class="mini-card">
+                <span class="number">{{i}}</span>
+                <div class="team-container">
+                    <span>{{scoreCard.playerName}}</span>
+                    <span class="mom">
+                        Man of the match
+                        <input [(ngModel)]="scoreCard.mom" required type="checkbox" class="" aria-describedby="basic-addon1">
+                    </span>
+                </div>
+                <div class="score-input-group">
+                    <input [(ngModel)]="scoreCard.battingScore" required type="text" class="form-control" placeholder="Batting Score" aria-describedby="basic-addon1">
+                    <input [(ngModel)]="scoreCard.bowlingScore" required type="text" class="form-control" placeholder="Bowling Score" aria-describedby="basic-addon1">
+                    <input [(ngModel)]="scoreCard.fieldingScore" required type="text" class="form-control" placeholder="Fielding Score" aria-describedby="basic-addon1">
+                    <input [(ngModel)]="scoreCard.extra" required type="text" class="form-control" placeholder="Extras" aria-describedby="basic-addon1">
+                </div>
+            </div>
+        </ng-template>
+    </ul>
+    <ul style="padding-left: 0px" *ngIf="summaryView">
+        <!--<div *ngIf="(matchId !== undefined) && (matchId !== null)" class="score-input-group title-container">
+            <span class="title">Batting Score</span>
+            <span class="title">Bowling Score</span>
+            <span class="title">Fielding Score</span>
+            <span class="title">Extras</span>
+        </div>-->
+        <ng-template ngFor let-scoreCard [ngForOf]="scoreCardDetils" let-i="index">
+            <div class="mini-card">
+                <span class="number">{{i}}</span>
+                <div class="team-container">
+                    <span>{{scoreCard.playerName}}</span>
+                    <!--<span class="mom">
+                        Man of the match
+                        <input [(ngModel)]="scoreCard.mom" required type="checkbox" class="" aria-describedby="basic-addon1">
+                    </span>-->
+                </div>
+                <!--<div class="score-input-group">
+                    <input [(ngModel)]="scoreCard.battingScore" required type="text" class="form-control" placeholder="Batting Score" aria-describedby="basic-addon1">
+                    <input [(ngModel)]="scoreCard.bowlingScore" required type="text" class="form-control" placeholder="Bowling Score" aria-describedby="basic-addon1">
+                    <input [(ngModel)]="scoreCard.fieldingScore" required type="text" class="form-control" placeholder="Fielding Score" aria-describedby="basic-addon1">
+                    <input [(ngModel)]="scoreCard.extra" required type="text" class="form-control" placeholder="Extras" aria-describedby="basic-addon1">
+                </div>-->
+            </div>
+        </ng-template>
+    </ul>
+</div>
+<div *ngIf="!summaryView && (matchId !== undefined) && (matchId !== null)" class="acton-container">
+    <div *ngIf="!this.createScoreCardList" (click)="update()" class="admin-btn update">Update</div>
+    <div *ngIf="!this.createScoreCardList" (click)="updateUserPoints()" class="admin-btn update">Calculate User Points</div>
+    <div *ngIf="!this.createScoreCardList" (click)="updateLeaderBoard()" class="admin-btn update">Update Leaderboard</div>
+    <div *ngIf="this.createScoreCardList" (click)="create(matchId)" class="admin-btn create">Create</div>
+</div>

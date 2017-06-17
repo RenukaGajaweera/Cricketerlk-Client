@@ -1,0 +1,34 @@
+<h2>Admin Page</h2>
+<h4 class="rules sub-heading">Match Panel</h4>
+<div class="rule-set-container">
+    <div class="rule-set">
+        <h5 class="category">Matches</h5>
+        <ul style="padding-left: 0px">
+            <ng-template ngFor let-match [ngForOf]="matchSchedules" let-i="index">
+                <div (click)="selectCard(match.scheduleId)" class="mini-card" [ngClass]="{'important': match.currentStatus == 2 || match.currentStatus == 3, 'disabled': match.currentStatus === 4}">
+                    <span [ngClass]="{'important': match.currentStatus == 2 || match.currentStatus == 3,'disabled': match.currentStatus === 4}"
+                        class="number">{{match.matchNumber}}</span>
+                    <div class="team-container">
+                        <span>{{match.teamOneName}}</span>
+                        <span>Vs.</span>
+                        <span>{{match.teamTwoName}}</span>
+                    </div>
+                    <span class="match-result" *ngIf="match.matchResult > 0">Won by {{match.matchResultDetails}}</span>
+                    <span class="match-result" *ngIf="match.matchResult === 0">{{match.matchResultDetails}}</span>
+                    <span class="match-status" *ngIf="match.currentStatus === 1">Complete</span>
+                    <span class="match-status" *ngIf="match.currentStatus === 2">In Progress</span>
+                    <span class="match-status" *ngIf="match.currentStatus === 3">Next</span>
+                    <span class="match-status" *ngIf="match.currentStatus === 4">Coming Up</span>
+                </div>
+            </ng-template>
+        </ul>
+    </div>
+    <div class="rule-set">
+        <h5 class="category">Score Card</h5>
+        <ul style="padding-left: 0px">
+            <div class="score-card-container">
+                <score-card [matchId]="selectedMatch" [summaryView]="false"></score-card>
+            </div>
+        </ul>
+    </div>
+</div>

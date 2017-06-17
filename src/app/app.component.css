@@ -1,0 +1,190 @@
+.btn.btn-primary {
+    width: 100%;
+    margin-top: 5%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 0px #3d3b3b;
+}
+
+.btn.btn-primary:hover {
+    box-shadow: none;
+}
+
+.hide-menu {
+    visibility: hidden;
+}
+
+.header {
+    position: relative;
+    top: 0;
+    display: block;
+    background-color: rgb(19, 18, 61) !important;
+    color: white;
+    width: 100%;
+    opacity: 0.85;
+    z-index: 1041;
+    padding: 0px;
+    box-shadow: 0px 1px 1px 1px #2a2a2a;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    display: block;
+    background-color: rgb(0, 80, 125) !important;;
+    color: white;
+    width: 100%;
+    opacity: 0.85;
+    z-index: 1041;
+    padding: 0px;
+    box-shadow: 0px 1px 1px 1px #2a2a2a;
+    text-align: -webkit-right;
+    margin-top: 20px;
+}
+
+.menu-item {
+    margin: 0px 5px 0px 5px;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    color: #cccccc;
+}
+
+.menu-item.selected {
+    color: #03A9F4;
+}
+
+.menu-item.selected:hover {
+    color: #03A9F4;
+}
+
+.row.page-header {
+    display: inline-flex;
+    width: 100%;
+    margin: 0px;
+}
+
+.row.page-header.header-two {
+    background-color: rgb(0, 80, 125) !important;
+    text-align: right
+}
+
+/*.header:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.2;
+}*/
+
+
+ul.list-inline {
+    display: inline-flex;
+    line-height: 5px;
+}
+li.list-inline-item {
+    margin: 0px 10px 0px 10px
+}
+
+.logo {
+    display: block;
+    width: 155px;
+    height: 155px;
+    background-size: cover;
+    margin: 0px 0px 10px 6px;
+    position: absolute;
+    /* top: 0px; */
+    /* left: 0px; */
+    background-position-y: -35px;
+}
+
+.title {
+    display: block;
+    line-height: 50px;
+    line-height: 60px;
+    margin: 0px 0px 0px 2px;
+}
+
+.title.brand {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-tab.link {
+    margin: 0px 10px 0px 10px;
+}
+
+ul.nav.nav-pills.hidden {
+    visibility: hidden;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed;
+    opacity: 1;
+    background-size: cover;
+}
+
+#background:before {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    content: '';
+    background-color: black;
+    display: block;
+}
+
+.clk-link {
+    color: white;
+}
+
+.clk-link:hover {
+    color: #cccccc;
+}
+
+@media screen and (min-width: 1024px) {
+    .footer {
+        position: fixed;
+    }
+}
+
+#big-loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed;
+    opacity: 1;
+    background-size: cover;
+    z-index: 3000;
+    background-color: rgba(0, 0, 0, 0.73);
+    display: none;
+}
+
+#loader-item {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    background-size: contain;
+}
+

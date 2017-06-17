@@ -1,0 +1,24 @@
+<div class="message-container">
+    <template ngFor let-message [ngForOf]="messagesList" let-i="index">
+        <span *ngIf="resolveLevel(message.alertLevel) === 'info'" class="message-item info">
+            <i class="fa fa-info" aria-hidden="true"></i>
+            {{message.messageBody}}
+            <i (click)="removeMessage(i)" class="fa fa-trash" aria-hidden="true"></i>
+        </span>
+        <span *ngIf="resolveLevel(message.alertLevel)  === 'success'" class="message-item success">
+            <i class="fa fa-info" aria-hidden="true"></i>
+            {{message.messageBody}}
+            <i (click)="removeMessage(i)" class="fa fa-trash" aria-hidden="true"></i>
+        </span>
+        <span *ngIf="resolveLevel(message.alertLevel)  === 'warning'" class="message-item warning">
+            <i class="fa fa-info" aria-hidden="true"></i>
+            {{message.messageBody}}
+            <i (click)="removeMessage(i)" class="fa fa-trash" aria-hidden="true"></i>
+        </span>
+        <span *ngIf="resolveLevel(message.alertLevel) === 'error'" class="message-item error">
+            <i class="fa fa-info" aria-hidden="true"></i>
+            {{message.messageBody}}
+            <i (click)="removeMessage(i)" class="fa fa-trash" aria-hidden="true"></i>
+        </span>
+    </template>
+</div>

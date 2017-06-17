@@ -1,0 +1,76 @@
+<div *ngIf="!userLoggedIn" class="col-md-12">
+    <div class="login-container">
+        <span id="loginTrigger" data-toggle="modal" data-target="#loginModal" (click)="logInPopUp()" class="login">
+            Login
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+        </span>
+    </div>
+</div>
+<div *ngIf="userLoggedIn" class="col-md-12">
+    <div class="user-details">
+        <img width="30px" [src]="userImagePath">
+        <label class="user-name">{{user.userName}}</label>
+        <span class="logout" (click)="signOut()">
+            Logout
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+        </span>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="2" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog " role="document ">
+        <div *ngIf="status === 'modal'" class="modal-content dark-background">
+            <!--<div class="modal-header ">
+                
+                <button type="button " class="close " data-dismiss="modal " aria-label="Close "><span aria-hidden="true ">&times;</span></button>
+            </div>-->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="col-md-5 sign-up-logo">
+                        <i class="fa fa-user-o" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <h4 class="modal-title" id="myModalLabel ">Login</h4>
+                <div class="input-group mail">
+                    <input required [(ngModel)]="email" type="email" class="form-control login-input" placeholder="Email" aria-describedby="basic-addon1"
+                        #name="ngModel">
+                    <!--<span class="input-group-addon input-icon login-input-icon-button" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>-->
+                </div>
+                <div class="input-group key">
+                    <!--<i class="fa fa-key" aria-hidden="true"></i>-->
+                    <input required [(ngModel)]="password" type="password" class="form-control login-input" placeholder="Password" aria-describedby="basic-addon1">
+                    <!--<span class="input-group-addon input-icon login-input-icon-button" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>-->
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-3 more-sign-up-options">
+                        or
+                    </div>
+                </div>
+                <div class="col-md-12 sign-up-buttons">
+                    <span (click)="loginWithPopUp('FACEBOOK')" class="button-item"><i class="fa fa-facebook" aria-hidden="true"></i><label class="signup-label">Facebook</label></span>
+                    <span (click)="loginWithPopUp('GOOGLE')" class="button-item"><i class="fa fa-google-plus" aria-hidden="true"></i><label class="signup-label">Google</label></span>
+                </div>
+                <button (click)="login()" type="button " class="btn btn-primary ">Login</button>
+                <div class="alert-text" *ngIf="!credentialsValidation">{{validationMessage}}</div>
+            </div>
+            <!--<div class="modal-footer ">
+                
+            </div>-->
+        </div>
+        <div *ngIf="status === 'loading'" class="modal-content dark-background">
+            <div class="modal-body ">
+                <img class="loading-modal" src="CDN/images/assets/blue_loader.gif">
+            </div>
+        </div>
+        <div *ngIf="status === 'error'" class="modal-content dark-background">
+            <h4 class="modal-title" id="myModalLabel ">
+                <span class="" id=""><i class="fa fa-exclamation" aria-hidden="true"></i></span> Error
+            </h4>
+            <div style="margin: auto" class="modal-body ">
+                {{errorMessage}}
+            </div>
+            <button (click)="backToLogin()" type="button" class="btn btn-primary back">Back</button>
+        </div>
+    </div>
+</div>

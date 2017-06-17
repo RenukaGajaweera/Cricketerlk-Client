@@ -1,0 +1,78 @@
+<div class="row" style="width: 100%;">
+    <div class="dashboard">
+        <div class="">
+            <img style="display: block; box-shadow: 3px 4px 6px 0px #131313;" class="team-image" [src]="teamImagePath">
+        </div>
+        <div class="team-info">
+            <div class="team-info-container">
+                <h2 class="team-name">{{user?.teamName}}</h2>
+                <span class="team-moto">{{user?.teamMotto}}</span>
+                <span class="supporting-country">{{supCountry?.COUNTRY_NAME}}</span>
+            </div>
+        </div>
+
+        <div style="display: inline-block" class="big-number-container position">
+            <label class="big-number">{{scorePosition.position}}</label>
+            <label class="big-number-label">Position</label>
+        </div>
+
+        <div style="display: inline-block" class="big-number-container score">
+            <label class="big-number">{{scorePosition.score}}</label>
+            <label class="big-number-label">Score</label>
+        </div>
+
+        <div class="results-button-container">
+            <div (click)="viewLeaderBoard()" style="margin-bottom: 25px;" class="leaderboard-btn">
+                <i class="fa fa-trophy" aria-hidden="true"></i> Leaderboard
+            </div>
+            <div (click)="viewScores(1)" class="leaderboard-btn">
+                <i class="fa fa-clock-o" aria-hidden="true"></i> Previous Scores
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-12 coming-soon">
+        <div *ngFor="let detail of matchDetails" (click)="gameCardAction(detail.currentStatus, detail.scheduleId)" [ngClass]="{'disabled': detail.currentStatus === 4, 'play': detail.currentStatus === 3}"
+            class="game-card">
+            <div class="game date">
+                <div class="data">{{detail.gameDay}}</div>
+                <div class="data big-text">{{detail.gameDate}}</div>
+                <div class="data">JUN</div>
+            </div>
+            <div class="game details">
+                <div class="data big-text">Match {{detail.matchNumber}}</div>
+                <div class="data">{{detail.matchGroup}}</div>
+            </div>
+            <div class="game teams">
+                <div class="data big-text team">{{detail.teamOneName}}</div>
+                <label>Vs.</label>
+                <div class="data big-text team">{{detail.teamTwoName}}</div>
+            </div>
+            <div class="game button">
+                <div *ngIf="detail.currentStatus === 1" style="font-size: 36px;" class="data big-text">View Results</div>
+                <div *ngIf="detail.currentStatus === 2" style="font-size: 36px;" class="data big-text">In Play</div>
+                <div *ngIf="detail.currentStatus === 3" style="font-size: 36px;" class="data big-text">Play</div>
+                <div *ngIf="detail.currentStatus === 4" style="font-size: 36px;" class="data big-text">Locked</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="LeaderboardModal" tabindex="2" role="dialog" aria-labelledby="leaderboardModalLabel">
+    <div class="modal-dialog " role="document ">
+        <div class="modal-content dark-background">
+            <span (click)="viewLeaderBoard()" class="back-button"><i class="fa fa-times" aria-hidden="true"></i></span>
+            <div class="modal-body leaderboard">
+                <h4 class="modal-title" id="myModalLabel ">Leaderboard</h4>
+                <div [ngClass]="{'gold': i === 0}" class="result-item" *ngFor="let leaderboardResut of leaderboard; let i = index;">
+                    <span [ngClass]="{'gold': i === 0}" *ngIf="i !== 0" class="index">{{i + 1}}</span>
+                    <span [ngClass]="{'gold': i === 0}" *ngIf="i === 0" class="index"><i class="fa fa-star" aria-hidden="true"></i></span>
+                    <span class="use-name">{{leaderboardResut[1]}}</span>
+                    <span class="user-score">{{leaderboardResut[2]}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

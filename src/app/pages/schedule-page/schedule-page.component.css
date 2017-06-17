@@ -1,0 +1,77 @@
+.rules.sub-heading {
+    background-color: #034c75;
+    padding: 4px;
+    margin: 10px 0px;
+}
+
+.category {
+    background-color: #036a75;
+    padding: 4px;
+}
+
+.rule-set-container {
+    display: inline-flex;
+    margin: auto;
+    width: 100%;
+}
+
+.rule-set {
+    display: block;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 40%;
+    margin: auto;
+}
+
+.mini-card {
+    width: 100%;
+    background-color: #058ac7;
+    margin: 10px 2px;
+    padding: 10px;
+    min-height: 30px;
+    border-radius: 6px;
+    box-shadow: 3px 4px 6px 0px #131313;
+}
+
+.mini-card.disabled {
+    background-color: #707070;
+}
+
+.mini-card.important {
+    background-color: #d13b3b;
+}
+
+.team-container {
+    display: inline-block;
+    margin-right: 10px;
+    min-width: 90px;
+}
+
+.number {
+    background-color: #00afff;
+    border-radius: 20px;
+    width: 25px;
+    display: inline-block;
+    height: 25px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.number.important {
+background-color: #ff4747
+}
+
+.number.disabled {
+    background-color: #a9a9a9;
+}
+
+.match-result {
+    margin-right: 10px;
+}
+
+.match-status{
+    text-align: right;
+    float: right;
+}

@@ -1,0 +1,46 @@
+.message-container {
+    position: fixed;
+    display: block;
+    z-index: 1000;
+    padding: 2px;
+}
+
+.message-item {
+    /* list-style: none; */
+    text-align: center;
+    display: block;
+    padding: 5px;
+    margin: 4px 0px;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.85);
+}
+
+
+
+.message-item.info {
+    background-color: #1389d8;
+}
+
+.message-item.success {
+    background-color: #1eac1e;
+}
+
+.message-item.warning {
+    background-color: #d59027;
+}
+
+.message-item.error {
+    background-color: #c94242;
+}
+
+.fa.fa-info {
+    margin-right: 5px;
+}
+
+.fa.fa-trash {
+    margin-left: 5px;
+    cursor: pointer
+}
+
+.fa.fa-trash:hover {
+    color: #cccccc;
+}

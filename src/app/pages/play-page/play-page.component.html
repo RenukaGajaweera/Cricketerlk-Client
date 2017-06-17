@@ -1,0 +1,157 @@
+<template [ngIf]="matchStatus === 3">
+    <div class="modal fade" id="StructureModal" tabindex="2" role="dialog" aria-labelledby="StructureModalLabel">
+        <div class="modal-dialog structure-dialog" role="document ">
+            <div class="modal-content dark-background">
+                <div class="modal-body">
+                    <span *ngIf="newEntry" (click)="back()" class="back-button">Back to home</span>
+                    <h3 class="modal-title" id="myModalLabel ">Select Team Structure</h3>
+                    <div class="structure-container">
+                        <div class="structure-row">
+                            <div class="structure" (click)="selectStructure(0)">
+                                <h6 class="structure-title">All-Round Frenzy</h6>
+                                <span class="criteria-item">3 Batsman</span>
+                                <span class="criteria-item">1 Wicket Keeper</span>
+                                <span class="criteria-item">4 All Rounders</span>
+                                <span class="criteria-item">3 Bowlers</span>
+                            </div>
+                            <div class="structure" (click)="selectStructure(1)">
+                                <h6 class="structure-title">Perfect All-Rounders</h6>
+                                <span class="criteria-item">4 Batsman</span>
+                                <span class="criteria-item">1 Wicket Keeper</span>
+                                <span class="criteria-item">3 All Rounders</span>
+                                <span class="criteria-item">3 Bowlers</span>
+                            </div>
+                            <div class="structure" (click)="selectStructure(2)">
+                                <h6 class="structure-title">Batting Power House</h6>
+                                <span class="criteria-item">5 Batsman</span>
+                                <span class="criteria-item">1 Wicket Keeper</span>
+                                <span class="criteria-item">2 All Rounders</span>
+                                <span class="criteria-item">3 Bowlers</span>
+                            </div>
+                        </div>
+                        <div class="structure-row">
+                            <div class="structure" (click)="selectStructure(3)">
+                                <h6 class="structure-title">Specialist Selection</h6>
+                                <span class="criteria-item">5 Batsman</span>
+                                <span class="criteria-item">1 Wicket Keeper</span>
+                                <span class="criteria-item">1 All Rounders</span>
+                                <span class="criteria-item">4 Bowlers</span>
+                            </div>
+                            <div class="structure" (click)="selectStructure(4)">
+                                <h6 class="structure-title">Balanced Beam</h6>
+                                <span class="criteria-item">4 Batsman</span>
+                                <span class="criteria-item">1 Wicket Keeper</span>
+                                <span class="criteria-item">2 All Rounders</span>
+                                <span class="criteria-item">4 Bowlers</span>
+                            </div>
+                            <div class="structure" (click)="selectStructure(5)">
+                                <h6 class="structure-title">Toe Crushers</h6>
+                                <span class="criteria-item">4 Batsman</span>
+                                <span class="criteria-item">1 Wicket Keeper</span>
+                                <span class="criteria-item">1 All Rounders</span>
+                                <span class="criteria-item">5 Bowlers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="structureSelected" class="play-container">
+        <div class="selected-structure">
+            <div class="structure-header">
+                <h5>{{selectedStructure.structure_name}} <span style="padding: 0px 4px;">({{currentSelection.teamOne + currentSelection.teamTwo}}/11)</span></h5>
+                <span (click)="fireStructureModal()" class="structure-action">change structure</span>
+            </div>
+            <div>
+                <span style="padding: 0px 4px;border-right: 1px solid white;">{{selectedStructure.criteriaObject.batsmen}} Batsmen</span>
+                <span style="padding: 0px 4px;border-right: 1px solid white;">{{selectedStructure.criteriaObject.wicketkeeper}} Wicket Keeper (WK)</span>
+                <span style="padding: 0px 4px;border-right: 1px solid white;">{{selectedStructure.criteriaObject.allrounder}} All Rounders</span>
+                <span>{{selectedStructure.criteriaObject.bowler}} Bowlers</span>
+            </div>
+        </div>
+        <h4 class="rules sub-heading">Choose Your Team</h4>
+        <div class="rule-set-container">
+            <div class="rule-set">
+                <h5 class="category">Available Players</h5>
+                <ul style="padding-left: 0px">
+                    <ng-template ngFor let-player [ngForOf]="playerList" let-i="index">
+                        <div *ngIf="!player?.added" class="mini-card fixed">
+                            <span class="number">{{i}}</span>
+                            <div class="team-container">
+                                {{player.playerName}}
+                            </div>
+                            <span class="match-result">
+                            {{player.playerTypeName}}<template [ngIf]="player.wicketKeeper">/WK</template>
+                        </span>
+                            <span>{{player.countryName}}</span>
+                        </div>
+                        <div *ngIf="!player?.added" (click)="addPlayer(player)" class="mini-card button">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </div>
+                    </ng-template>
+                </ul>
+            </div>
+            <!-- Selection -->
+            <div class="rule-set">
+                <h5 class="category">Selected Squad</h5>
+                <ul style="padding-left: 0px">
+                    <ng-template ngFor let-player [ngForOf]="playerList" let-i="index">
+                        <div *ngIf="player?.added" class="mini-card fixed">
+                            <span class="number">{{i}}</span>
+                            <div class="team-container">
+                                {{player.playerName}}
+                            </div>
+                            <span class="match-result">{{player.playerTypeName}}<template [ngIf]="player.wicketKeeper">/WK</template></span>
+                            <span>{{player.countryName}}</span>
+                            <div class="radio-btn-container">
+                                <span [ngClass]="{'cptn-selected': player.playerId === fantasyLeagueMetaData?.captain}" title="select as captain" (click)="selectCaptain(player.playerId)"
+                                    class="number radio-btn">c</span>
+                                <span [ngClass]="{'cptn-selected': player.playerId === fantasyLeagueMetaData?.viceCaptain}" title="select as vice captain"
+                                    (click)="selectViceCaptain(player.playerId)" class="number radio-btn">vc</span>
+                                <!--<span [ngClass]="{'cptn-selected': player.playerId === mom}" title="select as man of the match" (click)="selectMom(player.playerId)"
+                                class="number radio-btn"><i class="fa fa-star" aria-hidden="true"></i></span>-->
+                            </div>
+                        </div>
+                        <div *ngIf="player?.added" (click)="removePlayer(player)" class="mini-card button remove">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </div>
+                    </ng-template>
+                </ul>
+            </div>
+        </div>
+        <div class="user-action-container">
+            <span (click)="submitSelection()" class="submit">Submit</span>
+        </div>
+    </div>
+    <template [ngIf]="DisplayBigMessage">
+        <div class="big-message big-notification">
+            <h3 class="big-notification-title">{{bigMessageTitle}}</h3>
+            <div class="big-notification-body">
+                {{BigMessageBody}}
+                <div (click)="redirectToHomePage()" class="message-action-wrapper">
+                    <span class="message-action-btn">OK</span>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>
+
+<template [ngIf]="matchStatus === 4">
+    <div class="big-message">
+        THIS MATCH IS LOCKED. IT WILL BE UNLOCKED IN THE FUTURE FOR PLAY
+    </div>
+</template>
+
+<template [ngIf]="matchStatus === 2">
+    <div class="big-message">
+        THIS MATCH IS CURRENTLY IN PLAY
+    </div>
+</template>
+
+<template [ngIf]="matchStatus === 1">
+    <div class="big-message">
+        THIS MATCH IS COMPLETE. PLEASE SELECT THE CURRENTLY PLAYABLE MATCH
+    </div>
+</template>

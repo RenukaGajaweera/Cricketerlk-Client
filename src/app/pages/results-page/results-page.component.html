@@ -1,0 +1,7 @@
+<template [ngIf]="matchStatus === 1">
+    <h2>Results</h2>
+    <h4 class="rules sub-heading">{{countryDetails?.teamOne}} Vs. {{countryDetails?.teamTwo}}</h4>
+    <div class="rule-set-container">
+        <score-card *ngIf="resultType === 'm'" [matchId]="matchId" [summaryView]="true"></score-card>
+    </div>
+</template>

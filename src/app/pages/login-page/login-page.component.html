@@ -1,0 +1,153 @@
+<div class="row" style="width: 100%;margin: auto;">
+    <div class="sign-up container col-md-5">
+        <div class="col-md-12">
+            <div class="col-md-5 sign-up-logo">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+            </div>
+        </div>
+        <h4 class="modal-title">Sign-up</h4>
+        <div class="input-group mail">
+            <input required [(ngModel)]="email" type="email" class="form-control login-input" placeholder="Email" aria-describedby="basic-addon1"
+                #name="ngModel">
+            <!--<span class="input-group-addon input-icon login-input-icon-button" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>-->
+        </div>
+        <div class="input-group user">
+            <!--<i class="fa fa-key" aria-hidden="true"></i>-->
+            <input required [(ngModel)]="userName" type="text" class="form-control login-input" placeholder="User Name" aria-describedby="basic-addon1">
+            <!--<span class="input-group-addon input-icon login-input-icon-button" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>-->
+        </div>
+        <div class="input-group key">
+            <!--<i class="fa fa-key" aria-hidden="true"></i>-->
+            <input required [(ngModel)]="password" type="password" class="form-control login-input" placeholder="Password" aria-describedby="basic-addon1">
+            <!--<span class="input-group-addon input-icon login-input-icon-button" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>-->
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-5 more-sign-up-options">
+                or sign-up with
+            </div>
+        </div>
+        <div class="col-md-12 sign-up-buttons">
+            <span (click)="signupFacebook()" class="button-item"><i class="fa fa-facebook" aria-hidden="true"></i><label class="signup-label">Facebook</label></span>
+            <span (click)="signupGoogle()" class="button-item"><i class="fa fa-google-plus" aria-hidden="true"></i><label class="signup-label">Google</label></span>
+        </div>
+        <button (click)="signUp()" type="button" class="btn btn-primary ">Sign-up</button>
+        <div class="alert-text" *ngIf="!credentialsValidation">{{validationMessage}}</div>
+    </div>
+    <div class="col-md-7">
+    </div>
+</div>
+<div class="row" style="width: 100%;">
+    <div class="col-md-12 game-title">
+        <span class="title-brand">Cricketer LK</span>
+        <span class="title-game">Fantasy League</span>
+        <span class="title-event">ICC Champions Trophy 2017</span>
+    </div>
+</div>
+
+<div class="modal fade" id="signUpModal" tabindex="1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog " role="document ">
+        <div class="modal-content dark-background">
+        <div style="text-align: right">
+            <i class="signup-close" style="cursor: pointer" (click)="closeModal()" class="fa fa-times" aria-hidden="true"></i>
+        </div>
+            <div class="col-md-12">
+                <div class="col-md-5 sign-up-logo">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </div>
+            </div>
+            <!-- User Info -->
+            <div *ngIf="modalBody == 'user'" class="modal-body">
+                <h4 class="modal-title" id="myModalLabel ">User Info</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <!--<span class="input-group-addon input-icon login-input-icon-button" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>-->
+                        <div (click)="popUploadScreen('user')" style="display: block; text-align: center; padding: 4px;" class="upload-image-button">
+                            <i class="fa fa-upload" aria-hidden="true"></i>
+                        </div>
+                        <img class="profile-image" height="100px" [src]="userImagePath">
+                        <span class="image-text">Proile Image</span>
+                        <!--<i class="fa fa-key" aria-hidden="true"></i>-->
+                        <form enctype="multipart/form-data" id="userImageForm">
+                            <input style="display: none" name="files" (change)="upload('userImageForm')" id="userImageInput" type="file">
+                        </form>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="input-group user">
+                            <!--<i class="fa fa-key" aria-hidden="true"></i>-->
+                            <input required [(ngModel)]="user.fullName" type="text" class="form-control login-input" placeholder="Full Name" aria-describedby="basic-addon1">
+                            <!--<span class="input-group-addon input-icon login-input-icon-button" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>-->
+                        </div>
+                        <div class="date">
+                            <!--<i class="fa fa-key" aria-hidden="true"></i>-->
+                            <input required [(ngModel)]="user.dob" type="date" class="form-control login-input" placeholder="Birthday" aria-describedby="basic-addon1">
+                            <!--<span class="input-group-addon input-icon login-input-icon-button" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button (click)="modalNavigation('next')" type="button " class="btn btn-primary modal-navigation">
+                        Continue
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Team Info -->
+            <div *ngIf="modalBody == 'team'" class="modal-body">
+                <h4 class="modal-title" id="myModalLabel ">Team Info</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <!--<span class="input-group-addon input-icon login-input-icon-button" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>-->
+                        <div (click)="popUploadScreen('user')" style="display: block; text-align: center; padding: 4px; bottom: 24%;" class="upload-image-button">
+                            <i class="fa fa-upload" aria-hidden="true"></i>
+                        </div>
+                        <img class="profile-image" height="100px" [src]="teamImagePath">
+                        <span class="image-text">Team Image</span>
+                        <!--<i class="fa fa-key" aria-hidden="true"></i>-->
+                        <form enctype="multipart/form-data" id="teamImageForm">
+                            <input style="display: none" name="files" (change)="upload('teamImageForm')" id="userImageInput" type="file">
+                        </form>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="input-group trophy">
+                            <!--<i class="fa fa-key" aria-hidden="true"></i>-->
+                            <input required [(ngModel)]="user.teamName" type="text" class="form-control login-input" placeholder="Team Name" aria-describedby="basic-addon1">
+                            <!--<span class="input-group-addon input-icon login-input-icon-button" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>-->
+                        </div>
+                        <div class="input-group motto">
+                            <!--<i class="fa fa-key" aria-hidden="true"></i>-->
+                            <input required [(ngModel)]="user.teamMotto" type="text" class="form-control login-input" placeholder="Team Motto" aria-describedby="basic-addon1">
+                            <!--<span class="input-group-addon input-icon login-input-icon-button" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>-->
+                        </div>
+                        <div class="input-group flag">
+                            <!--<i class="fa fa-key" aria-hidden="true"></i>-->
+                            <!--<input required [(ngModel)]="user.supportingCountry" type="" class="form-control login-input" placeholder="Team Motto" aria-describedby="basic-addon1">-->
+                            <div class="input-group">
+                                <input [(ngModel)]="selectedCountrt" disabled required type="text" class="form-control login-input" placeholder="Supportin Team"
+                                    aria-describedby="basic-addon1">
+                                <div class="input-group-btn">
+                                    <span class="login-input dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li (click)="selectCountry(country)" class="country-select-list" *ngFor="let country of countries">{{country.COUNTRY_NAME}}</li>
+                                    </ul>
+                                </div>
+                                <!-- /btn-group -->
+                            </div>
+                            <!--<span class="input-group-addon input-icon login-input-icon-button" id="basic-addon1"><i class="fa fa-key" aria-hidden="true"></i></span>-->
+                        </div>
+                    </div>
+                    <div class="alert-text" *ngIf="errorModalMessage">{{modalValidationMessage}}</div>
+                </div>
+                <div class="row">
+                    <button (click)="modalNavigation('back')" type="button " class="btn btn-primary modal-navigation">
+                        Back
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    </button>
+                    <button (click)="modalNavigation('finish')" type="button " class="btn btn-primary modal-navigation">
+                        Continue
+                        <i class="fa fa-arrow-Right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
